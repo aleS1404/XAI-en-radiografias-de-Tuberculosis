@@ -139,15 +139,17 @@ La Tabla~\ref{tab:perf_extended} permite examinar las métricas adicionales junt
 \begin{figure}[t]\centering\includegraphics[width=.88\columnwidth]{fig_xai_box.png}
 \caption{EIL histórica por método en 40 radiografías de Montgomery y semilla 0. La línea indica la fracción pulmonar media aproximada; la referencia uniforme es individual.}\label{fig:historicxai}\end{figure}
 
-\subsection{Láminas de pulmones con explicaciones de la clase positiva}
-Las Figs.~\ref{fig:lungdense} y \ref{fig:lungres} muestran cuatro imágenes positivas idénticas para ambas arquitecturas. Se eligieron por orden de identificador entre los casos elegibles. En DenseNet121, MCUCXR\_0182\_1.png fue un falso negativo al umbral fijado en Shenzhen, aunque tanto Grad-CAM como LIME se calcularon para la clase TB. Los mapas de esa imagen atribuyeron relevancia a regiones distintas de la caja índice; por ello no se puede leer un color intenso como confirmación de una lesión. En ResNet50, las cuatro imágenes fueron negativas al umbral de la semilla 0, pese a tener etiqueta radiográfica positiva. La observación refuerza la necesidad de distinguir clase explicada, decisión a umbral y anotación anatómica. Los superpíxeles coloreados de LIME fuera del pulmón y la difusión de Grad-CAM muestran posibles áreas de atención, no diagnósticos ni una comparación cuantitativa entre métodos.
+\subsection{Ejemplos de explicaciones de la clase positiva}
+La Fig.~\ref{fig:lungdense} presenta dos casos elegibles de Montgomery con DenseNet121, semilla 0. MCUCXR\_0142\_1.png se clasificó como positivo y MCUCXR\_0182\_1.png fue un falso negativo al umbral fijado en Shenzhen. En ambos, Grad-CAM se calculó para la clase TB positiva, con independencia de la decisión. En el falso negativo, la zona más intensa queda lejos de la caja índice: un color intenso no confirma la localización de un hallazgo. Los mosaicos completos de cuatro casos, Grad-CAM y LIME para ambas arquitecturas se conservan en los resultados del proyecto. En ResNet50, esos cuatro casos recibieron una decisión negativa al umbral de la semilla 0. Las regiones coloreadas de LIME fuera del pulmón y la difusión de Grad-CAM muestran posibles áreas de atención, no diagnósticos ni una comparación cuantitativa entre métodos.
 
-\begin{figure*}[t]\centering\includegraphics[width=.98\textwidth]{fig_lung_xai_densenet121.png}
-\caption{Cuatro radiografías de Montgomery con DenseNet121 semilla 0. De izquierda a derecha: imagen con pulmón (amarillo), caja índice (rojo) y controles (cian); Grad-CAM; LIME. Ambos métodos explican la clase TB fija con la misma escala de imagen. La segunda fila es un falso negativo al umbral de validación.}\label{fig:lungdense}\end{figure*}
-
-\begin{figure*}[t]\centering\includegraphics[width=.98\textwidth]{fig_lung_xai_resnet50.png}
-\caption{Las mismas cuatro radiografías con ResNet50 semilla 0. Se conservaron clase objetivo, anotaciones y casos. La clasificación de estas imágenes fue negativa al umbral operativo de esta semilla; los mapas siguen representando la clase TB positiva.}\label{fig:lungres}\end{figure*}
-\clearpage
+\begin{figure}[t]
+\centering
+\includegraphics[width=.48\columnwidth,trim=48bp 632bp 516bp 61bp,clip]{fig_lung_xai_densenet121.png}\hfill
+\includegraphics[width=.48\columnwidth,trim=282bp 632bp 282bp 61bp,clip]{fig_lung_xai_densenet121.png}\\[2pt]
+\includegraphics[width=.48\columnwidth,trim=48bp 425bp 516bp 268bp,clip]{fig_lung_xai_densenet121.png}\hfill
+\includegraphics[width=.48\columnwidth,trim=282bp 425bp 282bp 268bp,clip]{fig_lung_xai_densenet121.png}
+\caption{Dos radiografías de Montgomery con DenseNet121 (semilla 0). Arriba: caso positivo bien clasificado MCUCXR\_0142\_1; abajo: falso negativo MCUCXR\_0182\_1. Izquierda: radiografía con pulmón (amarillo), caja índice (rojo) y controles (cian). Derecha: Grad-CAM de la clase TB positiva para el mismo caso.}\label{fig:lungdense}
+\end{figure}
 
 \subsection{Contraste intrapulmonar nuevo}
 La Tabla~\ref{tab:matched} y la Fig.~\ref{fig:matched} presentan el contraste nuevo. En DenseNet121, 13 de 17 radiografías tuvieron $D>0$. La mediana fue 0,172 (IC 0,065--0,632), estadístico de Wilcoxon 24 y $p=0,010986$. La prueba de signos fue $p=0,049042$ y la correlación biserial 0,686. En ResNet50, 12 de 17 tuvieron $D>0$; la mediana fue 0,064 (IC $-0,005$--0,336), con Wilcoxon $p=0,026672$ y prueba de signos $p=0,143463$. El intervalo de la mediana y la prueba de signos no apoyan una dirección estable en ese análisis de sensibilidad. El cambio mediano de probabilidad índice menos controles fue 0,0186 (IC 0,0042--0,0744) y 0,0113 (IC $-0,0008$--0,0668), respectivamente. Para $\sigma=5$, las medianas de $D$ fueron 0,192 y 0,106; se conservan en el archivo de resultados con sus valores $p$ crudos y ajustados.
