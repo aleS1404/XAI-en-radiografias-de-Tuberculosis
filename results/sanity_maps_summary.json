@@ -1,0 +1,37 @@
+{
+  "n_images": 55,
+  "models": {
+    "densenet121": {
+      "median_map_spearman": -0.16783512398857947,
+      "valid_map_pairs": 55,
+      "trained_valid_maps": 55,
+      "random_weights_valid_maps": 55,
+      "trained_gain": [
+        1.3432526544674772,
+        1.1517457540715155,
+        1.5241987336778036
+      ],
+      "random_weights_gain": [
+        0.8228171837061131,
+        0.643672954049974,
+        1.0082290221382353
+      ]
+    },
+    "resnet50": {
+      "median_map_spearman": -0.3461097776604004,
+      "valid_map_pairs": 55,
+      "trained_valid_maps": 55,
+      "random_weights_valid_maps": 55,
+      "trained_gain": [
+        1.2053546048436519,
+        0.9642546065795671,
+        1.4625975834718528
+      ],
+      "random_weights_gain": [
+        0.4392286920748759,
+        0.21934311669965983,
+        0.699206599996932
+      ]
+    }
+  }
+}

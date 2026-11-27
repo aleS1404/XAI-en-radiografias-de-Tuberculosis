@@ -1,0 +1,33 @@
+{
+  "source": "kmader/pulmonary-chest-xray-abnormalities",
+  "version": 1,
+  "images": 800,
+  "labels": {
+    "Shenzhen_0": 326,
+    "Shenzhen_1": 336,
+    "Montgomery_0": 80,
+    "Montgomery_1": 58
+  },
+  "montgomery_complete_mask_pairs": 138,
+  "file_manifest_sha256": "f7781ea2d27d8cf3e3020106e720a4d4e72ce15655bb3a452680a9fd2146f459",
+  "roi_csv": {
+    "montgomery_consensus_roi.csv": {
+      "boxes": 109,
+      "images": 55,
+      "matched_images": 55,
+      "sha256": "8fbea394b9350ab37698c6bc75042512530b61325003e81980501808f37900b6"
+    },
+    "shenzhen_consensus_roi.csv": {
+      "boxes": 250,
+      "images": 68,
+      "matched_images": 68,
+      "sha256": "5932b76cecb0f05ff9549d508ebac331ef234b93543fbbdade5c743090f5afc3"
+    }
+  },
+  "split_hash_audit": {
+    "n_images_hashed": 800,
+    "duplicate_content_groups": 0,
+    "duplicate_content_across_splits": 0,
+    "duplicate_rows": []
+  }
+}

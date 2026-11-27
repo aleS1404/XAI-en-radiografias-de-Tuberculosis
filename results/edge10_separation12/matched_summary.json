@@ -1,0 +1,177 @@
+{
+  "protocol": {
+    "size": 224,
+    "min_box_coverage": 0.5,
+    "min_pixels": 25,
+    "edge_tolerance_px": 10.0,
+    "min_controls": 3,
+    "max_controls": 5,
+    "center_separation_px": 12.0,
+    "blur_sigma": 10.0,
+    "alternative_blur_sigma": 5.0,
+    "selection": "largest box intersection with one lung; ties side then CSV order; controls geometry-only",
+    "cam_iou_top_fraction": 0.1,
+    "map_tie_break": "ascending flat pixel index",
+    "fidelity_fractions": [
+      0,
+      0.1,
+      0.2,
+      0.3,
+      0.4,
+      0.5
+    ],
+    "fidelity_background": "Gaussian sigma 10 inside lung; outside lung original",
+    "map_baselines": {
+      "uniform": 1,
+      "smoothed_random_repeats": 10,
+      "random_grid": [
+        7,
+        7
+      ],
+      "fixed_center_sigma_px": 44.800000000000004,
+      "status": "exploratory diagnostic"
+    },
+    "n_annotated": 55,
+    "n_eligible": 23,
+    "annotation_sha256": "8fbea394b9350ab37698c6bc75042512530b61325003e81980501808f37900b6",
+    "mode": "full",
+    "hardware": "NVIDIA GeForce RTX 3050 Laptop GPU"
+  },
+  "models": {
+    "densenet121": {
+      "10.0": {
+        "n": 23,
+        "zeros": 0,
+        "positive": 20,
+        "negative": 3,
+        "median_ci": [
+          0.3902982672055562,
+          0.13234650095303854,
+          0.6323470373948415
+        ],
+        "scipy": "1.18.1",
+        "method": "auto",
+        "zero_method": "wilcox",
+        "alternative": "two-sided",
+        "hypothesis": "distribucion_de_D_simetrica_alrededor_de_cero",
+        "statistic": 26.0,
+        "p": 0.00025343894958496094,
+        "sign_p": 0.00048828125,
+        "rank_biserial": 0.8115942028985508,
+        "status": "ok",
+        "n_excluded_geometry": 32,
+        "probability_median_ci": [
+          0.04507584869861603,
+          0.010794907808303833,
+          0.07436450819174449
+        ],
+        "spearman_rho": 0.4120553359683795,
+        "spearman_ci": [
+          -0.028438880433112042,
+          0.7598381545225164
+        ]
+      },
+      "5.0": {
+        "n": 23,
+        "zeros": 0,
+        "positive": 21,
+        "negative": 2,
+        "median_ci": [
+          0.4167735775311788,
+          0.18894750873247781,
+          0.7711076736450195
+        ],
+        "scipy": "1.18.1",
+        "method": "auto",
+        "zero_method": "wilcox",
+        "alternative": "two-sided",
+        "hypothesis": "distribucion_de_D_simetrica_alrededor_de_cero",
+        "statistic": 13.0,
+        "p": 2.09808349609375e-05,
+        "sign_p": 6.604194641113281e-05,
+        "rank_biserial": 0.9057971014492754,
+        "status": "ok",
+        "n_excluded_geometry": 32,
+        "probability_median_ci": [
+          0.040413942808906235,
+          0.013563022017478943,
+          0.08963274459044139
+        ],
+        "spearman_rho": 0.42687747035573126,
+        "spearman_ci": [
+          -0.02940633053552135,
+          0.7450423614567779
+        ],
+        "holm_secondary_p": 6.29425048828125e-05
+      }
+    },
+    "resnet50": {
+      "10.0": {
+        "n": 23,
+        "zeros": 0,
+        "positive": 18,
+        "negative": 5,
+        "median_ci": [
+          0.17350917061169943,
+          0.02630766232808431,
+          0.4759840766588847
+        ],
+        "scipy": "1.18.1",
+        "method": "auto",
+        "zero_method": "wilcox",
+        "alternative": "two-sided",
+        "hypothesis": "distribucion_de_D_simetrica_alrededor_de_cero",
+        "statistic": 29.0,
+        "p": 0.00040793418884277344,
+        "sign_p": 0.010622024536132812,
+        "rank_biserial": 0.7898550724637681,
+        "status": "ok",
+        "n_excluded_geometry": 32,
+        "probability_median_ci": [
+          0.018977582454681396,
+          0.0007692376772562662,
+          0.06882226218779705
+        ],
+        "spearman_rho": -0.02075098814229249,
+        "spearman_ci": [
+          -0.5278025793650793,
+          0.48535020868839096
+        ],
+        "holm_secondary_p": 0.0006985664367675781
+      },
+      "5.0": {
+        "n": 23,
+        "zeros": 0,
+        "positive": 19,
+        "negative": 4,
+        "median_ci": [
+          0.18971216678619385,
+          0.060816037530700785,
+          0.5864672462145487
+        ],
+        "scipy": "1.18.1",
+        "method": "auto",
+        "zero_method": "wilcox",
+        "alternative": "two-sided",
+        "hypothesis": "distribucion_de_D_simetrica_alrededor_de_cero",
+        "statistic": 28.0,
+        "p": 0.00034928321838378906,
+        "sign_p": 0.002599477767944336,
+        "rank_biserial": 0.7971014492753623,
+        "status": "ok",
+        "n_excluded_geometry": 32,
+        "probability_median_ci": [
+          0.04111699263254801,
+          0.004323796182870878,
+          0.06972235441207886
+        ],
+        "spearman_rho": 0.012845849802371542,
+        "spearman_ci": [
+          -0.469251095557448,
+          0.45584092827987416
+        ],
+        "holm_secondary_p": 0.0006985664367675781
+      }
+    }
+  }
+}

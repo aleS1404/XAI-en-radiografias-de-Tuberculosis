@@ -1,0 +1,38 @@
+{
+  "size": 224,
+  "min_box_coverage": 0.5,
+  "min_pixels": 25,
+  "edge_tolerance_px": 10.0,
+  "min_controls": 3,
+  "max_controls": 5,
+  "center_separation_px": 6.0,
+  "blur_sigma": 10.0,
+  "alternative_blur_sigma": 5.0,
+  "selection": "largest box intersection with one lung; ties side then CSV order; controls geometry-only",
+  "cam_iou_top_fraction": 0.1,
+  "map_tie_break": "ascending flat pixel index",
+  "fidelity_fractions": [
+    0,
+    0.1,
+    0.2,
+    0.3,
+    0.4,
+    0.5
+  ],
+  "fidelity_background": "Gaussian sigma 10 inside lung; outside lung original",
+  "map_baselines": {
+    "uniform": 1,
+    "smoothed_random_repeats": 10,
+    "random_grid": [
+      7,
+      7
+    ],
+    "fixed_center_sigma_px": 44.800000000000004,
+    "status": "exploratory diagnostic"
+  },
+  "n_annotated": 55,
+  "n_eligible": 26,
+  "annotation_sha256": "8fbea394b9350ab37698c6bc75042512530b61325003e81980501808f37900b6",
+  "mode": "full",
+  "hardware": "NVIDIA GeForce RTX 3050 Laptop GPU"
+}

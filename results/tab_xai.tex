@@ -1,0 +1,17 @@
+\begin{tabular}{llcccccc}
+\toprule
+Modelo & Método & $n$ & EIL & Ganancia & Punt. & Borde & Del.$\downarrow$ \\
+\midrule
+DenseNet121 & Grad-CAM & 40 & 0.406$\pm$0.094 & 1.65$\pm$0.57 & 0.70 & 0.67$\pm$0.25 & 0.411$\pm$0.250 \\
+DenseNet121 & LIME & 40 & 0.345$\pm$0.122 & 1.36$\pm$0.47 & 0.42 & 0.81$\pm$0.27 & 0.423$\pm$0.276 \\
+DenseNet121 & Aleatorio & 40 & 0.247$\pm$0.068 & 0.96$\pm$0.12 & 0.15 & 1.02$\pm$0.09 & 0.588$\pm$0.246 \\
+DenseNet121 & Grad-CAM (Mont. completo) & 138 & 0.408$\pm$0.104 & 1.64$\pm$0.50 & 0.58 & 0.64$\pm$0.23 & -- \\
+DenseNet121 & Grad-CAM (Shen. test) & 133 & -- & -- & -- & 0.56$\pm$0.16 & -- \\
+\midrule
+ResNet50 & Grad-CAM & 40 & 0.425$\pm$0.144 & 1.70$\pm$0.56 & 0.47 & 0.33$\pm$0.32 & 0.563$\pm$0.108 \\
+ResNet50 & LIME & 40 & 0.200$\pm$0.167 & 0.73$\pm$0.56 & 0.30 & 0.90$\pm$0.34 & 0.528$\pm$0.114 \\
+ResNet50 & Aleatorio & 40 & 0.247$\pm$0.068 & 0.96$\pm$0.12 & 0.15 & 1.02$\pm$0.09 & 0.669$\pm$0.142 \\
+ResNet50 & Grad-CAM (Mont. completo) & 138 & 0.435$\pm$0.139 & 1.74$\pm$0.55 & 0.59 & 0.33$\pm$0.29 & -- \\
+ResNet50 & Grad-CAM (Shen. test) & 133 & -- & -- & -- & 0.29$\pm$0.21 & -- \\
+\bottomrule
+\end{tabular}

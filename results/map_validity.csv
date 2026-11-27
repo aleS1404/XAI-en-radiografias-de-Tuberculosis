@@ -1,0 +1,11 @@
+model,method,valid,total
+densenet121,Grad-CAM,40,40
+densenet121,LIME,40,40
+densenet121,Aleatorio,40,40
+densenet121,Grad-CAM mg,138,138
+densenet121,Grad-CAM sz,133,133
+resnet50,Grad-CAM,40,40
+resnet50,LIME,40,40
+resnet50,Aleatorio,40,40
+resnet50,Grad-CAM mg,138,138
+resnet50,Grad-CAM sz,133,133
